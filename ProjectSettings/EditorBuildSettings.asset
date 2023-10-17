@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/PROMETEO - Car Controller/Scenes/Mobile Devices Demo.unity
+    guid: 136749ef7a3080548b1664e996c901e6
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: c850ee8c3b14cc8459e7e186857cf567
+  m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: ab2d4954b8eacfb4ab9668ce0e5a9bcd, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 671bda8e4dc3a604cbe6bce4d150b100,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: f462b72da82618244994848543d61b2f, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: 550fc4ba95d66ff4385791b17be74f71, type: 2}
