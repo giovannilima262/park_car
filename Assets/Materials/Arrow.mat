@@ -15,7 +15,7 @@ Material:
   - _EMISSION
   - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -81,5 +81,5 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.37647063, g: 1, b: 0.37254903, a: 1}
-    - _EmissionColor: {r: 0.116970696, g: 1, b: 0.11443538, a: 1}
+    - _EmissionColor: {r: 0.2533186, g: 1, b: 0.25, a: 1}
   m_BuildTextureStacks: []

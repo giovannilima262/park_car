@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3624656328444181616}
   - component: {fileID: 7018789221998200043}
   - component: {fileID: 7130102654279875652}
+  - component: {fileID: 3863483530792915312}
   m_Layer: 3
   m_Name: Collider1
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322550482753566840}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -105,6 +106,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3863483530792915312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322550482753566840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab3da235970b524b8fd942fcf4f3733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vacancy: {fileID: 2469220089100849013}
+  colliderVacancyEnum: 1
 --- !u!1 &1349035877966270587
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +215,7 @@ GameObject:
   - component: {fileID: 4725220353542170177}
   - component: {fileID: 8713981601572111603}
   - component: {fileID: 5720091415385411285}
+  - component: {fileID: 5686785965730458558}
   m_Layer: 3
   m_Name: Collider2
   m_TagString: Untagged
@@ -237,7 +253,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3811042659509634996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -293,6 +309,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5686785965730458558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811042659509634996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab3da235970b524b8fd942fcf4f3733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vacancy: {fileID: 2469220089100849013}
+  colliderVacancyEnum: 0
 --- !u!1 &5780442213923895359
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6196790370489180030}
+  - component: {fileID: 2469220089100849013}
   m_Layer: 0
   m_Name: Vacancy
   m_TagString: Untagged
@@ -548,6 +579,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2469220089100849013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8591555108968761270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404d28a9134d6e84299359d46b8ee8a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 3
 --- !u!1 &8619076249597214736
 GameObject:
   m_ObjectHideFlags: 0
