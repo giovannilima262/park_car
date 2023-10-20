@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using TMPro;
 
 public class Level : MonoBehaviour
 {
     #region Inspector Variables
+    [SerializeField]
+    private TextMeshProUGUI textCountVacancies;
+    [SerializeField]
+    private GameObject checkImageFinish;
     [SerializeField]
     private List<Vacancy> vacancies;
     [SerializeField]
@@ -23,6 +28,7 @@ public class Level : MonoBehaviour
 
     private void Start()
     {
+        UpdateTextCountVacancies();
         arrowTransform.localScale = Vector3.zero;
         imageTimer.transform.localScale = Vector3.zero;
         arrowTransform.DOScale(Vector3.one, 1f);
@@ -69,6 +75,7 @@ public class Level : MonoBehaviour
             if (vacancies[currentVacancyIndex].IsVacancyComplete)
             {
                 currentVacancyIndex++;
+                UpdateTextCountVacancies();
                 arrowTransform.DOScale(Vector3.one, .5f);
                 imageTimer.transform.DOScale(Vector3.zero, .5f);
             }
@@ -80,6 +87,20 @@ public class Level : MonoBehaviour
             isLevelComplete = true;
             Debug.Log("Level Complete");
         }
+    }
+
+    private void UpdateTextCountVacancies()
+    {
+        if (currentVacancyIndex >= vacancies.Count)
+        {
+            textCountVacancies.text = "0";
+            checkImageFinish.SetActive(true);
+            textCountVacancies.gameObject.SetActive(false);
+            return;
+        }
+        textCountVacancies.text = (vacancies.Count - currentVacancyIndex).ToString();
+        checkImageFinish.SetActive(false);
+        textCountVacancies.gameObject.SetActive(true);
     }
 
 }
