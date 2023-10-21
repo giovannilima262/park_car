@@ -8,9 +8,20 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject hitObject;
     #endregion
+
+    #region Private Variables
+    private GameManager gameManager;
+    #endregion
+
+    void Start()
+    {
+        gameManager = GameManager.Instance;
+    }
+
     void OnCollisionEnter(Collision other)
     {
         hitObject.transform.position = other.contacts[0].point;
         hitObject.SetActive(true);
+        gameManager.OnFoul();
     }
 }

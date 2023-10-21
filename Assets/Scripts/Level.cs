@@ -26,8 +26,13 @@ public class Level : MonoBehaviour
     private bool isLevelComplete;
     #endregion
 
+    #region Private Variables
+    private GameManager gameManager;
+    #endregion
+
     private void Start()
     {
+        gameManager = GameManager.Instance;
         UpdateTextCountVacancies();
         arrowTransform.localScale = Vector3.zero;
         imageTimer.transform.localScale = Vector3.zero;
@@ -85,7 +90,7 @@ public class Level : MonoBehaviour
             arrowTransform.DOScale(Vector3.zero, .5f);
             imageTimer.transform.DOScale(Vector3.zero, .5f);
             isLevelComplete = true;
-            Debug.Log("Level Complete");
+            gameManager.OnLevelComplete();
         }
     }
 
