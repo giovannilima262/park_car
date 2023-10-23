@@ -592,6 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 3
+  textMeshProUGUI: {fileID: 4704351446358691055}
 --- !u!1 &8619076249597214736
 GameObject:
   m_ObjectHideFlags: 0

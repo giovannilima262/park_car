@@ -7,8 +7,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     #region Inspector Variables
     [Header("Audio Source")]
     [SerializeField]
-    private AudioSource audioSource;
-
+    private AudioSource audioSourceVacancyComplete;
+    [SerializeField]
+    private AudioSource audioSourceComplete;
     [SerializeField]
     private GameObject buttonSoundOn;
 
@@ -30,23 +31,42 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     #region Private Variables
     private int sound;
-    private float volume;
     private int lives = 3;
+    private LevelManager levelManager;
+    #endregion
+
+    #region Properties
+    public AudioSource AudioSourceVacancyComplete { get => audioSourceVacancyComplete; }
     #endregion
 
     void Start()
     {
-        volume = audioSource.volume;
+        levelManager = LevelManager.Instance;
         sound = PlayerPrefs.GetInt("Sound", 1);
         ActionPause(sound == 0);
     }
 
     public void OnLevelComplete()
     {
+        audioSourceComplete.Play();
         plateComplete.transform.DOMoveY(0f, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
         {
-            plateComplete.transform.DOMoveY(-1035f, 0.5f).SetDelay(2f).SetEase(Ease.OutBounce);
+            plateComplete.transform.DOMoveY(-1035f, 0.5f).SetDelay(1f).SetEase(Ease.OutBounce)
+            .OnComplete(() =>
+                {
+                    ResetLife();
+                    levelManager.OnLevelComplete();
+                }
+            );
         });
+    }
+
+    private void ResetLife()
+    {
+        lives = 3;
+        foul1.SetActive(false);
+        foul2.SetActive(false);
+        foul3.SetActive(false);
     }
 
     public void OnFoul()
@@ -66,7 +86,15 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         }
         plateFoul.transform.DOMoveY(0f, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
         {
-            plateFoul.transform.DOMoveY(-1035f, 0.5f).SetDelay(1f).SetEase(Ease.OutBounce);
+            plateFoul.transform.DOMoveY(-1035f, 0.5f).SetDelay(1f).SetEase(Ease.OutBounce)
+            .OnComplete(() =>
+            {
+                if (lives <= 0)
+                {
+                    ResetLife();
+                    levelManager.OnLevelFailed();
+                }
+            });
         });
     }
 
@@ -85,14 +113,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         int valueSound = value ? 0 : 1;
         buttonSoundOn.SetActive(!value);
         buttonSoundOff.SetActive(value);
-        if (value)
-        {
-            audioSource.volume = 0;
-        }
-        else
-        {
-            audioSource.volume = volume;
-        }
+        AudioListener.volume = value ? 0 : 1;
         PlayerPrefs.SetInt("Sound", valueSound);
     }
 

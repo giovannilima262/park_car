@@ -37,6 +37,10 @@ public class Level : MonoBehaviour
         arrowTransform.localScale = Vector3.zero;
         imageTimer.transform.localScale = Vector3.zero;
         arrowTransform.DOScale(Vector3.one, 1f);
+        for (int i = 0; i < vacancies.Count; i++)
+        {
+            vacancies[i].TextMeshProUGUI.text = (i + 1).ToString();
+        }
     }
 
     void Update()

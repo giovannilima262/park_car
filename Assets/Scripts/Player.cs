@@ -23,5 +23,6 @@ public class Player : MonoBehaviour
         hitObject.transform.position = other.contacts[0].point;
         hitObject.SetActive(true);
         gameManager.OnFoul();
+        gameManager.AudioSourceVacancyComplete.Play();
     }
 }

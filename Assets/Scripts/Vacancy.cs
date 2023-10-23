@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Vacancy : MonoBehaviour
 {
     #region Inspector Variables
     [SerializeField]
     private int timer = 3;
+    [SerializeField]
+    private TextMeshProUGUI textMeshProUGUI;
     #endregion
 
     #region Private Variables
@@ -22,6 +25,7 @@ public class Vacancy : MonoBehaviour
     public bool IsVacancyComplete { get => isVacancyComplete; }
     public float TimerAux { get => timerAux; }
     public int Timer { get => timer; }
+    public TextMeshProUGUI TextMeshProUGUI { get => textMeshProUGUI; }
     #endregion
 
     private void Start()
