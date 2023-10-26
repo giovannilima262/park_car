@@ -83,6 +83,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         else if (lives == 0)
         {
             foul3.SetActive(true);
+            levelManager.OnStartLevelFailed();
         }
         plateFoul.transform.DOMoveY(0f, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
         {

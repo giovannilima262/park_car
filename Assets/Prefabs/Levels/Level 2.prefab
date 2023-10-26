@@ -5400,6 +5400,7 @@ MonoBehaviour:
   - {fileID: 1609678704505800286}
   arrowTransform: {fileID: 5726862920819568269}
   imageTimer: {fileID: 557552868960895531}
+  gameControllerCanvas: {fileID: 6267974792749218322}
 --- !u!1 &7742439776536807630
 GameObject:
   m_ObjectHideFlags: 0
@@ -5919,6 +5920,12 @@ MonoBehaviour:
 --- !u!4 &5726862920819568269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6365746365361479491, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    type: 3}
+  m_PrefabInstance: {fileID: 1670355990619664846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6267974792749218322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4742882155527392220, guid: 79d0ca8b77e301442afdb49f102e8aed,
     type: 3}
   m_PrefabInstance: {fileID: 1670355990619664846}
   m_PrefabAsset: {fileID: 0}

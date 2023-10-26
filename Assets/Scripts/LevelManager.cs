@@ -45,4 +45,9 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
     {
         InstantiateLevel();
     }
+
+    public void OnStartLevelFailed()
+    {
+        currentLevel.OnLevelFailed();
+    }
 }

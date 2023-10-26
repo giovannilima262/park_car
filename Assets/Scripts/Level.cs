@@ -18,6 +18,8 @@ public class Level : MonoBehaviour
     private Transform arrowTransform;
     [SerializeField]
     private Image imageTimer;
+    [SerializeField]
+    private GameObject gameControllerCanvas;
     #endregion
 
     #region Private Variables
@@ -32,6 +34,7 @@ public class Level : MonoBehaviour
 
     private void Start()
     {
+        gameControllerCanvas.SetActive(true);
         gameManager = GameManager.Instance;
         UpdateTextCountVacancies();
         arrowTransform.localScale = Vector3.zero;
@@ -94,6 +97,7 @@ public class Level : MonoBehaviour
             arrowTransform.DOScale(Vector3.zero, .5f);
             imageTimer.transform.DOScale(Vector3.zero, .5f);
             isLevelComplete = true;
+            gameControllerCanvas.SetActive(false);
             gameManager.OnLevelComplete();
         }
     }
@@ -110,6 +114,11 @@ public class Level : MonoBehaviour
         textCountVacancies.text = (vacancies.Count - currentVacancyIndex).ToString();
         checkImageFinish.SetActive(false);
         textCountVacancies.gameObject.SetActive(true);
+    }
+
+    public void OnLevelFailed()
+    {
+        gameControllerCanvas.SetActive(false);
     }
 
 }
