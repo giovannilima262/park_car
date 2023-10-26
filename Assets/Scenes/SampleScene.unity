@@ -549,6 +549,15 @@ MonoBehaviour:
   levelPrefabsList:
   - {fileID: 1025661366155078594, guid: 399322f9e78151c4884637535ec46fd6, type: 3}
   - {fileID: 1025661366155078594, guid: c12220bdbe1ae2645a70e0dea37c36f7, type: 3}
+  - {fileID: 1025661366155078594, guid: aa1137a15c0bd3f4fae9ab144f8139a6, type: 3}
+  - {fileID: 1025661366155078594, guid: 139ddf8712bde7d45b064bb967a7cdda, type: 3}
+  - {fileID: 1025661366155078594, guid: 65517e9a7065ff54c9ae379673e394b0, type: 3}
+  - {fileID: 1025661366155078594, guid: 76d2f725290e0494dadb7f5d96789384, type: 3}
+  - {fileID: 1025661366155078594, guid: 9e41fd74e3552974c9626347b23fbda8, type: 3}
+  - {fileID: 1025661366155078594, guid: d4598a8c4bce405418b87565bf331ea8, type: 3}
+  - {fileID: 1025661366155078594, guid: 912cfd1763a5fc349adaa6d2e3461f5c, type: 3}
+  - {fileID: 1025661366155078594, guid: d14ec55f3e823c344b3f56fcb485a554, type: 3}
+  - {fileID: 1025661366155078594, guid: fd842ec88d9ca2b41baeab589b235c3c, type: 3}
 --- !u!1 &296699080
 GameObject:
   m_ObjectHideFlags: 0
