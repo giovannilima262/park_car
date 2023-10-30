@@ -24,7 +24,7 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
     {
         if (currentLevelIndex >= levelPrefabsList.Count)
         {
-            currentLevelIndex = 0;
+            currentLevelIndex = 5;
         }
         if (currentLevel != null)
         {
