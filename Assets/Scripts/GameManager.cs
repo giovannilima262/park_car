@@ -9,6 +9,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField]
     private AudioSource audioSourceVacancyComplete;
     [SerializeField]
+    private AudioSource audioSourceVacancyCollision;
+    [SerializeField]
     private AudioSource audioSourceComplete;
     [SerializeField]
     private GameObject buttonSoundOn;
@@ -36,6 +38,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     #endregion
 
     #region Properties
+    public AudioSource AudioSourceVacancyCollision { get => audioSourceVacancyCollision; }
     public AudioSource AudioSourceVacancyComplete { get => audioSourceVacancyComplete; }
     #endregion
 

@@ -86,6 +86,7 @@ public class Level : MonoBehaviour
         {
             if (vacancies[currentVacancyIndex].IsVacancyComplete)
             {
+                gameManager.AudioSourceVacancyComplete.Play();
                 currentVacancyIndex++;
                 UpdateTextCountVacancies();
                 arrowTransform.DOScale(Vector3.one, .5f);
