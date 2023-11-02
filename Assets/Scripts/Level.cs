@@ -91,10 +91,15 @@ public class Level : MonoBehaviour
                 UpdateTextCountVacancies();
                 arrowTransform.DOScale(Vector3.one, .5f);
                 imageTimer.transform.DOScale(Vector3.zero, .5f);
+                if (currentVacancyIndex % 2 == 0)
+                {
+                    AdsInterstitialView.Instance.ShowAd();
+                }
             }
         }
         else if (!isLevelComplete)
         {
+            AdsRewardedView.Instance.ShowRewardedAd(() => { });
             arrowTransform.DOScale(Vector3.zero, .5f);
             imageTimer.transform.DOScale(Vector3.zero, .5f);
             isLevelComplete = true;
